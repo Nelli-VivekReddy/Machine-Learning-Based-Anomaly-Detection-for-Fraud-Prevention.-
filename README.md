@@ -107,6 +107,7 @@ streamlit run app/app.py
 
 
 - Then open your browser at http://localhost:8501
+```
 
 ## 💡 Future Enhancements
 
