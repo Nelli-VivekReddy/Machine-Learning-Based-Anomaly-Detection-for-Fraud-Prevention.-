@@ -117,6 +117,34 @@ streamlit run app/app.py
 
 - Dockerized deployment on AWS
 
-
-
 - Database feedback loop for retraining
+
+## 🧮 Project Structure
+
+```text
+fraud_detection/
+│
+├── app/
+│   ├── app.py                # Streamlit dashboard (real-time + batch prediction)
+│   └── __init__.py
+│
+├── data/
+│   ├── fraud_data.csv
+│   └── fraud_test_sample_1000.csv
+│
+├── model/
+│   ├── random_forest_model.pkl
+│   ├── xgboost_model.pkl
+│   ├── scaler.pkl
+│   └── encoders.pkl
+│
+├── src/
+│   ├── preprocess.py
+│   ├── evaluate.py
+│   ├── utils.py
+│   └── train_all_models.py
+│
+├── create_test_sample.py
+├── requirements.txt
+└── README.md
+
