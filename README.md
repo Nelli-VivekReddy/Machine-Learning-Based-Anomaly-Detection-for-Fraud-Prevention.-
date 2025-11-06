@@ -95,9 +95,9 @@ git clone https://github.com/Nelli-VivekReddy/Machine-Learning-Based-Anomaly-Det
 cd fraud_detection
 
 - Create Virtual Environment:
-python -m venv .venv
-source .venv/bin/activate     # Mac/Linux
-.venv\Scripts\activate        # Windows
+  -python -m venv .venv
+  -source .venv/bin/activate     # Mac/Linux
+  -.venv\Scripts\activate        # Windows
 
 - Install Dependencies:
 pip install -r requirements.txt
