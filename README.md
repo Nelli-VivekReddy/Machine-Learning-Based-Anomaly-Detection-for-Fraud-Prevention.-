@@ -65,7 +65,7 @@ It leverages **Random Forest** and **XGBoost** models trained on financial data,
 🧱 Project Structure
 ## 🧮 Project Structure
 
-```text
+
 fraud_detection/
 │
 ├── app/
@@ -92,57 +92,60 @@ fraud_detection/
 ├── requirements.txt
 └── README.md
 
+🧰 Tech Stack
+Category	Technology
+Language	Python
+ML Libraries	Scikit-learn, XGBoost, imbalanced-learn
+Data Processing	pandas, numpy
+Visualization	Plotly, Matplotlib, Seaborn
+Frontend	Streamlit
+Deployment	AWS EC2 / Streamlit Cloud
+⚡ How It Works
 
-⚙️ Setup Instructions
-1️⃣ Clone the Repository
-git clone https://github.com/<your-username>/fraud-detection-ml-app.git
-cd fraud-detection-ml-app
+1️⃣ Upload CSV / Enter Transaction → via Streamlit UI
+2️⃣ Data Processing → Encoding + Scaling + Validation
+3️⃣ Model Prediction → Random Forest classifies as Fraud or Not Fraud
+4️⃣ Visualization → Dashboard displays insights and fraud metrics
 
-2️⃣ Create a Virtual Environment
+📊 Dashboard Features
+
+Fraud vs Legitimate Pie Chart
+
+Transaction Type vs Fraud Bar Chart
+
+Fraud Amount Distribution Histogram
+
+Summary Metrics: Total, Fraudulent, Legitimate, Avg. Fraud Amount
+
+🧾 Setup Instructions
+Clone the Repository
+git clone https://github.com/Nelli-VivekReddy/Machine-Learning-Based-Anomaly-Detection-for-Fraud-Prevention.git
+cd fraud_detection
+
+Create Virtual Environment
 python -m venv .venv
 source .venv/bin/activate     # Mac/Linux
 .venv\Scripts\activate        # Windows
 
-3️⃣ Install Dependencies
+Install Dependencies
 pip install -r requirements.txt
 
-4️⃣ Run the App
+Run Streamlit App
 streamlit run app/app.py
 
-🧠 Future Enhancements
 
-Then open your browser at 👉 http://localhost:8501
-
-🧩 Example Prediction Flow
-
-Upload a CSV with transaction data (no isFraud column)
-
-Model preprocesses and predicts fraud probabilities
-
-Dashboard displays:
-
-Fraud vs Legit count
-
-Average fraud amount
-
-Distribution charts
-
-Downloadable CSV with predictions
-
-🧠 Key Learnings
-
-Handling highly imbalanced data using SMOTE
-
-Building modular ML pipelines (train → save → deploy)
-
-Deploying interactive ML dashboards with Streamlit
-
-Using ML for cybersecurity anomaly detection
+Then open your browser at http://localhost:8501
 
 💡 Future Enhancements
 
-🚀 Add model comparison toggle (Random Forest vs XGBoost in UI)
-📈 Feature importance visualizations (SHAP)
-📬 Email/SMS alert system for high fraud risk
-☁️ Docker / AWS deployment
-🗃️ Database logging for user feedback and retraining
+Add model comparison toggle (Random Forest vs XGBoost)
+
+Feature importance visualization (SHAP)
+
+Alert system for suspicious transactions
+
+Dockerized deployment on AWS
+
+Database feedback loop for retraining
+
+
