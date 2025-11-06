@@ -62,35 +62,6 @@ It leverages **Random Forest** and **XGBoost** models trained on financial data,
 
 ✅ Random Forest was chosen for deployment due to superior performance and interpretability.
 
-## 🧮 Project Structure
-
-fraud_detection/
-│
-├── app/
-│   ├── app.py                # Streamlit dashboard (real-time + batch prediction)
-│   └── __init__.py
-│
-├── data/
-│   ├── fraud_data.csv
-│   └── fraud_test_sample_1000.csv
-│
-├── model/
-│   ├── random_forest_model.pkl
-│   ├── xgboost_model.pkl
-│   ├── scaler.pkl
-│   └── encoders.pkl
-│
-├── src/
-│   ├── preprocess.py
-│   ├── evaluate.py
-│   ├── utils.py
-│   └── train_all_models.py
-│
-├── create_test_sample.py
-├── requirements.txt
-└── README.md
-
-
 🧰 Tech Stack
 Category	Technology
 Language	Python
@@ -146,5 +117,3 @@ Alert system for suspicious transactions
 Dockerized deployment on AWS
 
 Database feedback loop for retraining
-
-
