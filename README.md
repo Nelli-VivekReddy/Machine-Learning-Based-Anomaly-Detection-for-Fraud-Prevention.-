@@ -62,14 +62,12 @@ It leverages **Random Forest** and **XGBoost** models trained on financial data,
 
 ✅ Random Forest was chosen for deployment due to superior performance and interpretability.
 
-🧱 Project Structure
 ## 🧮 Project Structure
-
 
 fraud_detection/
 │
 ├── app/
-│   ├── app.py                   # Streamlit dashboard (real-time + batch prediction)
+│   ├── app.py                # Streamlit dashboard (real-time + batch prediction)
 │   └── __init__.py
 │
 ├── data/
@@ -91,6 +89,7 @@ fraud_detection/
 ├── create_test_sample.py
 ├── requirements.txt
 └── README.md
+
 
 🧰 Tech Stack
 Category	Technology
