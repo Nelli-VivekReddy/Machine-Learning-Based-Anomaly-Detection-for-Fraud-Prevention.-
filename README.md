@@ -90,31 +90,35 @@ XGBoost	99.92%	99.93%	99.93%
 ✅ Random Forest chosen as the final model for deployment (best overall balance of accuracy and interpretability).
 
 🧱 Project Structure
+## 🧮 Project Structure
+
+```text
 fraud_detection/
 │
 ├── app/
-│   ├── app.py                ← Streamlit dashboard
+│   ├── app.py                   # Streamlit dashboard (real-time + batch prediction)
 │   └── __init__.py
-│
-├── src/
-│   ├── train_all_models.py   ← Model training script
-│   ├── preprocess.py         ← Data cleaning + feature engineering
-│   ├── evaluate.py           ← Metrics and evaluation
-│   └── utils.py              ← Helper functions
-│
-├── model/
-│ ├── random_forest_model.pkl
-│ ├── xgboost_model.pkl
-│ ├── scaler.pkl
-│ └── encoders.pkl
 │
 ├── data/
 │   ├── fraud_data.csv
 │   └── fraud_test_sample_1000.csv
 │
+├── model/
+│   ├── random_forest_model.pkl
+│   ├── xgboost_model.pkl
+│   ├── scaler.pkl
+│   └── encoders.pkl
+│
+├── src/
+│   ├── preprocess.py
+│   ├── evaluate.py
+│   ├── utils.py
+│   └── train_all_models.py
+│
 ├── create_test_sample.py
 ├── requirements.txt
 └── README.md
+
 
 ⚙️ Setup Instructions
 1️⃣ Clone the Repository
