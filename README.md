@@ -43,32 +43,24 @@ It leverages **Random Forest** and **XGBoost** models trained on financial data,
 
 ---
 
-Data Preprocessing
+## ⚙️ Data Preprocessing
 
-Encodes categorical columns (type, nameOrig, nameDest)
+- Encoded categorical columns using **LabelEncoder**  
+- Scaled numeric features with **StandardScaler**  
+- Balanced data using **SMOTE** (Synthetic Minority Oversampling Technique)  
+- Split into training and testing sets  
+- Saved reusable artifacts (`model.pkl`, `scaler.pkl`, `encoders.pkl`)  
 
-Scales numeric features
+---
 
-Handles class imbalance using SMOTE
+## 📈 Model Performance
 
-Model Training
+| Model | Accuracy | F1-score | ROC-AUC |
+|:------|:----------|:---------|:--------|
+| **Random Forest** | 99.95% | 99.96% | 99.96% |
+| **XGBoost** | 99.92% | 99.93% | 99.93% |
 
-Trains both Random Forest and XGBoost models
-
-Evaluates using metrics like F1, ROC-AUC, and Confusion Matrix
-
-Model Deployment
-
-Saves trained models as .pkl files (using joblib)
-
-Streamlit app loads the model for interactive predictions
-
-🧮 Model Performance
-Model	Accuracy	F1-score	ROC-AUC
-Random Forest	99.95%	99.96%	99.96%
-XGBoost	99.92%	99.93%	99.93%
-
-✅ Random Forest chosen as the final model for deployment (best overall balance of accuracy and interpretability).
+✅ Random Forest was chosen for deployment due to superior performance and interpretability.
 
 🧱 Project Structure
 ## 🧮 Project Structure
