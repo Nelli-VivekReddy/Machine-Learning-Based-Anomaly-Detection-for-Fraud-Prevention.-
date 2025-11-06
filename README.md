@@ -1,66 +1,47 @@
-Machine Learning–Based Fraud Detection System
-🔐 Real-Time Anomaly Detection for Financial Cybersecurity
+# 💳 Machine Learning-Based Anomaly Detection for Fraud Prevention
 
-A Streamlit-powered web application that uses machine learning to detect fraudulent financial transactions in real time.
+A machine learning–powered system designed to detect **fraudulent financial transactions** in real time.  
+It acts as a **cybersecurity tool** by identifying **anomalous behaviors** and potential fraud in digital payment systems.
 
-🧠 Overview
+---
 
-This project demonstrates how machine learning can be used as a cybersecurity tool to detect fraudulent vs. legitimate transactions in financial systems.
-It trains models on real-world transaction data to identify anomalous patterns indicative of cyber fraud, money laundering, or system abuse.
+## 🚀 Overview
 
-🚀 Features
+This project uses **Machine Learning (ML)** techniques to classify transactions as *fraudulent* or *legitimate*.  
+It leverages **Random Forest** and **XGBoost** models trained on financial data, and integrates with a Streamlit dashboard for real-time predictions.
 
-✅ Two Operating Modes
+---
 
-📂 Batch Mode: Upload a CSV of transactions for instant fraud analysis
+## 🧩 Features
 
-⚡ Real-Time Mode: Input transaction details and get instant prediction
+- ✅ Detects fraudulent vs. legitimate transactions  
+- ✅ Real-time prediction through a Streamlit web app  
+- ✅ Two modes: CSV batch upload and single transaction prediction  
+- ✅ Interactive dashboard with fraud insights  
+- ✅ Designed for financial cybersecurity and fraud prevention  
 
-✅ Interactive Dashboard
+---
 
-Pie chart of fraud vs legitimate transactions
+## 🧠 Dataset
 
-Bar chart by transaction type
+**Source:** [Kaggle – Fraud Detection Dataset by Aman Ali Siddiqui](https://www.kaggle.com/datasets/amanalids/fraud-detection)  
+**Size:** ~150,000+ transaction records  
 
-Amount distribution histogram
+| Column | Description |
+|:--------|:------------|
+| `step` | Time step of the transaction |
+| `type` | Transaction type (`CASH_IN`, `TRANSFER`, `CASH_OUT`, `PAYMENT`, etc.) |
+| `amount` | Transaction amount |
+| `nameOrig` | Sender account ID |
+| `oldbalanceOrg` | Sender balance before transaction |
+| `newbalanceOrig` | Sender balance after transaction |
+| `nameDest` | Receiver account ID |
+| `oldbalanceDest` | Receiver balance before transaction |
+| `newbalanceDest` | Receiver balance after transaction |
+| `isFlaggedFraud` | Flagged by rule-based system (0/1) |
+| `isFraud` | Ground truth label (1 = Fraud, 0 = Legitimate) |
 
-Fraud probability per transaction
-
-✅ Machine Learning Pipeline
-
-Preprocessing (scaling, encoding, SMOTE balancing)
-
-Model training (Random Forest, XGBoost)
-
-Evaluation (Accuracy, F1, ROC-AUC)
-
-Model deployment via Streamlit
-
-✅ Cybersecurity Integration
-
-Detects anomaly-based financial frauds
-
-Works as an early alert system for suspicious activities
-
-🧩 Dataset
-
-Source: Kaggle – Fraud Detection Dataset by Aman Ali Siddiqui
-
-Size: ~150,000+ transactions
-
-Column	Description	Example
-step	Time step of the transaction	43
-type	Transaction type (CASH_IN, TRANSFER, etc.)	TRANSFER
-amount	Amount transferred	85000
-nameOrig	Sender account ID	C12345
-oldbalanceOrg	Sender balance before transaction	90000
-newbalanceOrig	Sender balance after transaction	5000
-nameDest	Receiver account ID	M23456
-oldbalanceDest	Receiver balance before transaction	0
-newbalanceDest	Receiver balance after transaction	0
-isFlaggedFraud	Flagged by rules (0/1)	0
-isFraud	True label (1 = fraud, 0 = legitimate)	1
-🧠 How It Works
+---
 
 Data Preprocessing
 
