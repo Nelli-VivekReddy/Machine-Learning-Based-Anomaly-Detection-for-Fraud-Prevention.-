@@ -90,7 +90,8 @@ Deployment:	AWS EC2 / Streamlit Cloud
 
 ## 🧾 Setup Instructions
 
-- Clone the Repository:
+### 🧩 1. Clone the Repository
+```bash
 git clone https://github.com/Nelli-VivekReddy/Machine-Learning-Based-Anomaly-Detection-for-Fraud-Prevention.git
 cd fraud_detection
 
