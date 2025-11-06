@@ -62,58 +62,62 @@ It leverages **Random Forest** and **XGBoost** models trained on financial data,
 
 ✅ Random Forest was chosen for deployment due to superior performance and interpretability.
 
-🧰 Tech Stack
-Category	Technology
-Language	Python
-ML Libraries	Scikit-learn, XGBoost, imbalanced-learn
-Data Processing	pandas, numpy
-Visualization	Plotly, Matplotlib, Seaborn
-Frontend	Streamlit
-Deployment	AWS EC2 / Streamlit Cloud
-⚡ How It Works
+## 🧰 Tech Stack
 
-1️⃣ Upload CSV / Enter Transaction → via Streamlit UI
-2️⃣ Data Processing → Encoding + Scaling + Validation
-3️⃣ Model Prediction → Random Forest classifies as Fraud or Not Fraud
-4️⃣ Visualization → Dashboard displays insights and fraud metrics
+Language:	Python
+ML Libraries:	Scikit-learn, XGBoost, imbalanced-learn
+Data Processing:	pandas, numpy
+Visualization:	Plotly, Matplotlib, Seaborn
+Frontend:	Streamlit
+Deployment:	AWS EC2 / Streamlit Cloud
 
-📊 Dashboard Features
+## ⚡ How It Works
 
-Fraud vs Legitimate Pie Chart
+- 1️⃣ Upload CSV / Enter Transaction → via Streamlit UI
+- 2️⃣ Data Processing → Encoding + Scaling + Validation
+- 3️⃣ Model Prediction → Random Forest classifies as Fraud or Not Fraud
+- 4️⃣ Visualization → Dashboard displays insights and fraud metrics
 
-Transaction Type vs Fraud Bar Chart
+## 📊 Dashboard Features
 
-Fraud Amount Distribution Histogram
+- Fraud vs Legitimate Pie Chart
 
-Summary Metrics: Total, Fraudulent, Legitimate, Avg. Fraud Amount
+- Transaction Type vs Fraud Bar Chart
 
-🧾 Setup Instructions
-Clone the Repository
+- Fraud Amount Distribution Histogram
+
+- Summary Metrics: Total, Fraudulent, Legitimate, Avg. Fraud Amount
+
+## 🧾 Setup Instructions
+
+- Clone the Repository:
 git clone https://github.com/Nelli-VivekReddy/Machine-Learning-Based-Anomaly-Detection-for-Fraud-Prevention.git
 cd fraud_detection
 
-Create Virtual Environment
+- Create Virtual Environment:
 python -m venv .venv
 source .venv/bin/activate     # Mac/Linux
 .venv\Scripts\activate        # Windows
 
-Install Dependencies
+- Install Dependencies:
 pip install -r requirements.txt
 
-Run Streamlit App
+- Run Streamlit App:
 streamlit run app/app.py
 
 
-Then open your browser at http://localhost:8501
+- Then open your browser at http://localhost:8501
 
-💡 Future Enhancements
+## 💡 Future Enhancements
 
-Add model comparison toggle (Random Forest vs XGBoost)
+- Add model comparison toggle (Random Forest vs XGBoost)
 
-Feature importance visualization (SHAP)
+- Feature importance visualization (SHAP)
 
-Alert system for suspicious transactions
+- Alert system for suspicious transactions
 
-Dockerized deployment on AWS
+- Dockerized deployment on AWS
 
-Database feedback loop for retraining
+
+
+- Database feedback loop for retraining
