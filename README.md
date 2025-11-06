@@ -1,106 +1,72 @@
-Machine Learning–Based Fraud Detection System
-🔐 Real-Time Anomaly Detection for Financial Cybersecurity
+Machine Learning-Based Anomaly Detection for Fraud Prevention
 
-A Streamlit-powered web application that uses machine learning to detect fraudulent financial transactions in real time.
+A machine learning–powered system designed to detect fraudulent financial transactions in real time.
+It serves as a cybersecurity measure by identifying anomalous behaviors and potential fraud in digital payment systems.
 
-🧠 Overview
+🚀 Overview
 
-This project demonstrates how machine learning can be used as a cybersecurity tool to detect fraudulent vs. legitimate transactions in financial systems.
-It trains models on real-world transaction data to identify anomalous patterns indicative of cyber fraud, money laundering, or system abuse.
+This project applies Machine Learning (ML) techniques to detect financial fraud from transactional data.
+It uses Random Forest and XGBoost models to classify transactions as fraudulent or legitimate based on behavioral patterns.
 
-🚀 Features
+🧩 Features
 
-✅ Two Operating Modes
+✅ Detects fraudulent vs. legitimate transactions
 
-📂 Batch Mode: Upload a CSV of transactions for instant fraud analysis
+✅ Real-time prediction via Streamlit
 
-⚡ Real-Time Mode: Input transaction details and get instant prediction
+✅ Supports both CSV batch and single-transaction prediction
 
-✅ Interactive Dashboard
+✅ Interactive analytics dashboard (charts + metrics)
 
-Pie chart of fraud vs legitimate transactions
+✅ Cybersecurity-aligned anomaly detection system
 
-Bar chart by transaction type
-
-Amount distribution histogram
-
-Fraud probability per transaction
-
-✅ Machine Learning Pipeline
-
-Preprocessing (scaling, encoding, SMOTE balancing)
-
-Model training (Random Forest, XGBoost)
-
-Evaluation (Accuracy, F1, ROC-AUC)
-
-Model deployment via Streamlit
-
-✅ Cybersecurity Integration
-
-Detects anomaly-based financial frauds
-
-Works as an early alert system for suspicious activities
-
-🧩 Dataset
+🧠 Dataset
 
 Source: Kaggle – Fraud Detection Dataset by Aman Ali Siddiqui
 
-Size: ~150,000+ transactions
+Size: ~150,000+ transaction records
 
-Column	Description	Example
-step	Time step of the transaction	43
-type	Transaction type (CASH_IN, TRANSFER, etc.)	TRANSFER
-amount	Amount transferred	85000
-nameOrig	Sender account ID	C12345
-oldbalanceOrg	Sender balance before transaction	90000
-newbalanceOrig	Sender balance after transaction	5000
-nameDest	Receiver account ID	M23456
-oldbalanceDest	Receiver balance before transaction	0
-newbalanceDest	Receiver balance after transaction	0
-isFlaggedFraud	Flagged by rules (0/1)	0
-isFraud	True label (1 = fraud, 0 = legitimate)	1
-🧠 How It Works
+Column	Description
+step	Time step of the transaction
+type	Transaction type (CASH_IN, TRANSFER, CASH_OUT, PAYMENT, etc.)
+amount	Transaction amount
+nameOrig	Sender account ID
+oldbalanceOrg	Sender balance before transaction
+newbalanceOrig	Sender balance after transaction
+nameDest	Receiver account ID
+oldbalanceDest	Receiver balance before transaction
+newbalanceDest	Receiver balance after transaction
+isFlaggedFraud	Flagged by rule-based system (0 or 1)
+isFraud	Ground truth label (1 = Fraud, 0 = Legitimate)
+⚙️ Data Preprocessing
 
-Data Preprocessing
+Encoded categorical columns: type, nameOrig, nameDest
 
-Encodes categorical columns (type, nameOrig, nameDest)
+Scaled numerical features using StandardScaler
 
-Scales numeric features
+Balanced dataset using SMOTE (Synthetic Minority Oversampling Technique)
 
-Handles class imbalance using SMOTE
+Split into training/testing datasets
 
-Model Training
+Saved reusable artifacts (model.pkl, scaler.pkl, encoders.pkl)
 
-Trains both Random Forest and XGBoost models
-
-Evaluates using metrics like F1, ROC-AUC, and Confusion Matrix
-
-Model Deployment
-
-Saves trained models as .pkl files (using joblib)
-
-Streamlit app loads the model for interactive predictions
-
-🧮 Model Performance
+📈 Model Performance
 Model	Accuracy	F1-score	ROC-AUC
 Random Forest	99.95%	99.96%	99.96%
 XGBoost	99.92%	99.93%	99.93%
 
-✅ Random Forest chosen as the final model for deployment (best overall balance of accuracy and interpretability).
+✅ Random Forest was chosen for deployment (best overall balance of accuracy and interpretability).
 
-🧱 Project Structure
+🧮 Project Structure
 fraud_detection/
 │
 ├── app/
-│   ├── app.py                ← Streamlit dashboard
+│   ├── app.py                   # Streamlit dashboard (real-time + batch prediction)
 │   └── __init__.py
 │
-├── src/
-│   ├── train_all_models.py   ← Model training script
-│   ├── preprocess.py         ← Data cleaning + feature engineering
-│   ├── evaluate.py           ← Metrics and evaluation
-│   └── utils.py              ← Helper functions
+├── data/
+│   ├── fraud_data.csv
+│   └── fraud_test_sample_1000.csv
 │
 ├── model/
 │   ├── random_forest_model.pkl
@@ -108,64 +74,63 @@ fraud_detection/
 │   ├── scaler.pkl
 │   └── encoders.pkl
 │
-├── data/
-│   ├── fraud_data.csv
-│   └── fraud_test_sample_1000.csv
+├── src/
+│   ├── preprocess.py
+│   ├── evaluate.py
+│   ├── utils.py
+│   └── train_all_models.py
 │
-├── create_test_sample.py     ← Script to generate 1000-row test data
+├── create_test_sample.py
 ├── requirements.txt
 └── README.md
 
-⚙️ Setup Instructions
+🧰 Tech Stack
+Category	Technology
+Language	Python
+ML Libraries	Scikit-learn, XGBoost, imbalanced-learn
+Data Processing	pandas, numpy
+Visualization	Plotly, Matplotlib, Seaborn
+Frontend	Streamlit
+Deployment	AWS EC2 / Streamlit Cloud
+⚡ How It Works
+
+1️⃣ Upload CSV / Enter Transaction → via Streamlit UI
+2️⃣ Data Processing → Encoding + Scaling + Validation
+3️⃣ Model Prediction → Random Forest classifies as Fraud or Not Fraud
+4️⃣ Visualization → Dashboard displays analytics (charts + summary metrics)
+
+📊 Dashboard Features
+
+📈 Fraud vs Legitimate Pie Chart
+
+📊 Transaction Type vs Fraud Bar Chart
+
+💰 Fraud Amount Distribution Histogram
+
+🧾 Metrics summary (Total, Fraudulent, Legitimate, Avg. Fraud Amount)
+
+🧾 Setup Instructions
 1️⃣ Clone the Repository
-git clone https://github.com/<your-username>/fraud-detection-ml-app.git
-cd fraud-detection-ml-app
+git clone https://github.com/Nelli-VivekReddy/Machine-Learning-Based-Anomaly-Detection-for-Fraud-Prevention.git
+cd fraud_detection
 
 2️⃣ Create a Virtual Environment
 python -m venv .venv
 source .venv/bin/activate     # Mac/Linux
-# OR
-.\.venv\Scripts\activate      # Windows
+.venv\Scripts\activate        # Windows
 
 3️⃣ Install Dependencies
 pip install -r requirements.txt
 
-4️⃣ Run the Streamlit App
+4️⃣ Run the App
 streamlit run app/app.py
 
+🧠 Future Enhancements
 
-Then open your browser at 👉 http://localhost:8501
+Integrate with live transaction APIs for real-time fraud streams
 
-🧩 Example Prediction Flow
+Deploy via Docker / AWS Lambda for production
 
-Upload a CSV with transaction data (no isFraud column)
+Add Explainability (SHAP values)
 
-Model preprocesses and predicts fraud probabilities
-
-Dashboard displays:
-
-Fraud vs Legit count
-
-Average fraud amount
-
-Distribution charts
-
-Downloadable CSV with predictions
-
-🧠 Key Learnings
-
-Handling highly imbalanced data using SMOTE
-
-Building modular ML pipelines (train → save → deploy)
-
-Deploying interactive ML dashboards with Streamlit
-
-Using ML for cybersecurity anomaly detection
-
-💡 Future Enhancements
-
-🚀 Add model comparison toggle (Random Forest vs XGBoost in UI)
-📈 Feature importance visualizations (SHAP)
-📬 Email/SMS alert system for high fraud risk
-☁️ Docker / AWS deployment
-🗃️ Database logging for user feedback and retraining
+Build alert and notification system for anomalies
